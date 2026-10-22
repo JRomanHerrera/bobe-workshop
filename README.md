@@ -39,7 +39,7 @@ Para facilitar la instalación y garantizar la compatibilidad de las dependencia
 ### 2.1. Clonar el repositorio del taller
 
 ```bash
-git clone <URL_DEL_REPOSITORIO_DEL_TALLER>
+git clone https://github.com/JRomanHerrera/bobe-workshop.git
 cd bobe_workshop
 ```
 
