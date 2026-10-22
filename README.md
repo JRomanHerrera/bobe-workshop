@@ -289,39 +289,39 @@ notebooks/TestExample.ipynb
 
 El primer ejercicio utiliza un modelo cosmológico simplificado con dos parámetros libres:
 
-$$
+```math
 \theta = (H_0,\omega_b).
-$$
+```
 
 Se consideran dos funciones de likelihood gaussianas:
 
-$$
+```math
 \ln \mathcal{L}_{H_0}
 =
 -\frac{1}{2}
 \left(
 \frac{H_0-\mu_{H_0}}{\sigma_{H_0}}
 \right)^2,
-$$
+```
 
-$$
+```math
 \ln \mathcal{L}_{\omega_b}
 =
 -\frac{1}{2}
 \left(
 \frac{\omega_b-\mu_{\omega_b}}{\sigma_{\omega_b}}
 \right)^2.
-$$
+```
 
 La función de verosimilitud conjunta es:
 
-$$
+```math
 \ln \mathcal{L}(\theta)
 =
 \ln \mathcal{L}_{H_0}
 +
 \ln \mathcal{L}_{\omega_b}.
-$$
+```
 
 Los parámetros restantes del modelo cosmológico se mantienen fijos.
 
