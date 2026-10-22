@@ -40,7 +40,7 @@ Para facilitar la instalación y garantizar la compatibilidad de las dependencia
 
 ```bash
 git clone https://github.com/JRomanHerrera/bobe-workshop.git
-cd bobe_workshop
+cd bobe-workshop
 ```
 
 ### 2.2. Crear el entorno Conda
@@ -242,7 +242,7 @@ Esto garantiza que los notebooks utilicen las bibliotecas instaladas en el entor
 La estructura sugerida del proyecto es:
 
 ```text
-bobe_workshop/
+bobe-workshop/
 │
 ├── input/
 │   ├── lcdm_simple.yaml
