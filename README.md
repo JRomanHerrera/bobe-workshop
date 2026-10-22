@@ -295,33 +295,33 @@ $$
 
 Se consideran dos funciones de likelihood gaussianas:
 
-\[
+$$
 \ln \mathcal{L}_{H_0}
 =
 -\frac{1}{2}
 \left(
 \frac{H_0-\mu_{H_0}}{\sigma_{H_0}}
 \right)^2,
-\]
+$$
 
-\[
+$$
 \ln \mathcal{L}_{\omega_b}
 =
 -\frac{1}{2}
 \left(
 \frac{\omega_b-\mu_{\omega_b}}{\sigma_{\omega_b}}
 \right)^2.
-\]
+$$
 
 La función de verosimilitud conjunta es:
 
-\[
+$$
 \ln \mathcal{L}(\theta)
 =
 \ln \mathcal{L}_{H_0}
 +
 \ln \mathcal{L}_{\omega_b}.
-\]
+$$
 
 Los parámetros restantes del modelo cosmológico se mantienen fijos.
 
@@ -365,7 +365,7 @@ Los resultados se guardarán en el directorio indicado por la opción `output` d
 
 En el segundo ejercicio consideramos los seis parámetros cosmológicos habituales:
 
-\[
+$$
 \theta_{\Lambda \mathrm{CDM}}
 =
 \{
@@ -376,12 +376,12 @@ H_0,
 \omega_b,
 \omega_{\mathrm{cdm}}
 \}.
-\]
+$$
 
 Utilizamos datos cosmológicos de:
 
-- Planck 2018 low-\(\ell\) TT.
-- Planck 2018 low-\(\ell\) EE.
+- Planck 2018 low-$\ell$ TT.
+- Planck 2018 low-$\ell$ EE.
 - Planck NPIPE CamSpec TTTEEE.
 - Planck 2018 CMB lensing.
 - DESY5 supernovas.
