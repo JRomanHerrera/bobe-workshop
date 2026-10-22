@@ -289,9 +289,9 @@ notebooks/TestExample.ipynb
 
 El primer ejercicio utiliza un modelo cosmológico simplificado con dos parámetros libres:
 
-\[
+$$
 \theta = (H_0,\omega_b).
-\]
+$$
 
 Se consideran dos funciones de likelihood gaussianas:
 
