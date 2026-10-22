@@ -365,7 +365,7 @@ Los resultados se guardarán en el directorio indicado por la opción `output` d
 
 En el segundo ejercicio consideramos los seis parámetros cosmológicos habituales:
 
-```bash
+```math
 \theta_{\Lambda \mathrm{CDM}}
 =
 \{
