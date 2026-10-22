@@ -1,0 +1,158 @@
+theory:
+  classy:
+    path: null
+    speed: 0.2
+    stop_at_error: false
+    extra_args:
+      non_linear: halofit
+    ignore_obsolete: false
+    renames:
+      As: A_s
+      ns: n_s
+      nrun: alpha_s
+      nrunrun: beta_s
+      nt: n_t
+      ntrun: alpha_t
+      rdrag: rs_drag
+      omegak: Omega_k
+      omegal: Omega_Lambda
+      w: w0_fld
+      wa: wa_fld
+      omegabh2: omega_b
+      omegab: Omega_b
+      omegach2: omega_cdm
+      omegac: Omega_cdm
+      omegam: Omega_m
+      omegan: Omega_nu
+      tau: tau_reio
+      zrei: z_reio
+      deltazrei: reionization_width
+      helium_redshift: helium_fullreio_redshift
+      helium_delta_redshift: helium_fullreio_width
+      yhe: YHe
+      yheused: YHe
+    version: v3.4.1
+    input_params:
+    - A_s
+    - n_s
+    - tau_reio
+    - omega_b
+    - omega_cdm
+    - H0
+    output_params:
+    - Omega_m
+likelihood:
+  H0_gaussian:
+    type: []
+    speed: -1
+    stop_at_error: false
+    version: null
+    external: 'lambda H0: -0.5*((H0 - 67.7)/1.0)**2'
+    input_params:
+    - H0
+    output_params: []
+  BBN_gaussian:
+    type: []
+    speed: -1
+    stop_at_error: false
+    version: null
+    external: 'lambda omega_b: -0.5*((omega_b - 0.02218)/0.00055)**2'
+    input_params:
+    - omega_b
+    output_params: []
+params:
+  logA:
+    value: 3.040776555
+    drop: true
+  A_s:
+    value: 'lambda logA: 1e-10*np.exp(logA)'
+    latex: A_\mathrm{s}
+    derived: true
+    renames:
+    - As
+  n_s:
+    value: 0.9652909209
+    renames:
+    - ns
+  tau_reio:
+    value: 0.05546101493
+    renames:
+    - tau
+  omega_cdm:
+    value: 0.12
+    renames:
+    - omegach2
+  omega_b:
+    prior:
+      min: 0.021
+      max: 0.023
+    ref:
+      dist: norm
+      loc: 0.0224954976
+      scale: 0.0001
+    proposal: 0.0001
+    latex: \Omega_\mathrm{b} h^2
+    renames:
+    - omegabh2
+  H0:
+    prior:
+      min: 64.0
+      max: 72.0
+    ref:
+      dist: norm
+      loc: 67.7123491
+      scale: 0.05
+    proposal: 0.05
+    latex: H_0
+  h:
+    derived: 'lambda H0: H0/100.'
+  Omega_m:
+    derived: true
+    latex: \Omega_\mathrm{m}
+    renames:
+    - omegam
+  omega_m:
+    derived: 'lambda Omega_m, h: Omega_m*h**2'
+    latex: \Omega_\mathrm{m} h^2
+sampler:
+  mcmc:
+    sampler_type: mcmc
+    supports_periodic_params: true
+    burn_in: 0
+    max_tries: 40d
+    covmat: null
+    covmat_params: null
+    proposal_scale: 2.4
+    output_every: 60s
+    learn_every: 40d
+    temperature: 1
+    learn_proposal: true
+    learn_proposal_Rminus1_max: 2.0
+    learn_proposal_Rminus1_max_early: 30.0
+    learn_proposal_Rminus1_min: 0.0
+    max_samples: 1000
+    Rminus1_stop: 0.01
+    Rminus1_cl_stop: 0.2
+    Rminus1_cl_level: 0.95
+    Rminus1_single_split: 4
+    measure_speeds: true
+    oversample_power: 0.4
+    oversample_thin: true
+    drag: false
+    blocking:
+    - - 1
+      - - omega_b
+    - - 1
+      - - H0
+    callback_function: null
+    callback_every: null
+    seed: null
+    check_every: null
+    oversample: null
+    drag_limits: null
+    fallback_covmat_scale: 4
+    version: 3.6.2
+output: lcdm_simple
+timing: true
+test: true
+version: 3.6.2

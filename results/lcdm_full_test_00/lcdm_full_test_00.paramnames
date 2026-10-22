@@ -1,0 +1,15 @@
+logA	\log(10^{10} A_\mathrm{s})
+n_s	n_\mathrm{s}
+tau_reio	\tau_\mathrm{reio}
+H0	H_{0}
+omega_b	\Omega_\mathrm{b} h^2
+omega_cdm	\Omega_\mathrm{cdm} h^2
+A_planck	y_\mathrm{cal}
+amp_143	A^{\rm power}_{143}
+amp_217	A^{\rm power}_{217}
+amp_143x217	A^{\rm power}_{143\times217}
+n_143	\gamma^{\rm power}_{143}
+n_217	\gamma^{\rm power}_{217}
+n_143x217	\gamma^{\rm power}_{143\times217}
+calTE	c_{TE}
+calEE	c_{EE}

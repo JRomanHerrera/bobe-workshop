@@ -1,0 +1,51 @@
+{
+  "evidence": {
+    "logz": -1.7072662858204462,
+    "logz_err": 0.0002278304204919035,
+    "logz_lower": -1.7074941162233324,
+    "logz_upper": -1.7070384553823486,
+    "dlogz_sampler": 0.04335783989849803
+  },
+  "diagnostics": {
+    "runtime_hours": 0.017218428585264418,
+    "converged": true,
+    "termination_reason": "LogZ converged"
+  },
+  "gp_info": {
+    "gp_training_set_size": 88,
+    "gp_final_best_loglike": -0.07094863409661745,
+    "classifier_used": false,
+    "classifier_type": "svm",
+    "classifier_training_set_size": 88,
+    "classifier_use_threshold": 10,
+    "classifier_probability_threshold": 0.5
+  },
+  "final_convergence": {
+    "iteration": 11,
+    "logz_value": -1.7072662858204462,
+    "logz_error": 1.0629828733091664e-05,
+    "threshold": 1.0,
+    "converged": true,
+    "dlogz_sampler": 0.04335783989849803
+  },
+  "parameters": {
+    "omega_b": {
+      "mean": 0.022121451093637588,
+      "std": 0.000452505829118761,
+      "2.5_percentile": 0.021210084349707503,
+      "97.5_percentile": 0.02290974609818943,
+      "16_percentile": 0.021632538122818304,
+      "84_percentile": 0.022612416050577653,
+      "median": 0.022143113281655816
+    },
+    "H0": {
+      "mean": 67.71066112395202,
+      "std": 1.0095707747064364,
+      "2.5_percentile": 65.69239533213953,
+      "97.5_percentile": 69.7271809729133,
+      "16_percentile": 66.7176395870013,
+      "84_percentile": 68.7144891976935,
+      "median": 67.7095449992612
+    }
+  }
+}

@@ -1,0 +1,410 @@
+theory:
+  classy:
+    path: null
+    speed: 0.2
+    stop_at_error: false
+    extra_args:
+      non_linear: halofit
+      N_ur: 3.044
+      N_ncdm: 0
+    ignore_obsolete: false
+    renames:
+      As: A_s
+      ns: n_s
+      nrun: alpha_s
+      nrunrun: beta_s
+      nt: n_t
+      ntrun: alpha_t
+      rdrag: rs_drag
+      omegak: Omega_k
+      omegal: Omega_Lambda
+      w: w0_fld
+      wa: wa_fld
+      omegabh2: omega_b
+      omegab: Omega_b
+      omegach2: omega_cdm
+      omegac: Omega_cdm
+      omegam: Omega_m
+      omegan: Omega_nu
+      tau: tau_reio
+      zrei: z_reio
+      deltazrei: reionization_width
+      helium_redshift: helium_fullreio_redshift
+      helium_delta_redshift: helium_fullreio_width
+      yhe: YHe
+      yheused: YHe
+    version: v3.4.1
+    input_params:
+    - A_s
+    - n_s
+    - tau_reio
+    - H0
+    - omega_b
+    - omega_cdm
+    output_params:
+    - Omega_Lambda
+    - Omega_m
+likelihood:
+  planck_2018_lowl.TT:
+    lmin: 2
+    lmax: 29
+    type: CMB
+    aliases:
+    - lowT
+    speed: -1
+    stop_at_error: false
+    version: null
+    input_params:
+    - A_planck
+    output_params: []
+  planck_2018_lowl.EE:
+    type: CMB
+    aliases:
+    - lowE
+    speed: -1
+    stop_at_error: false
+    version: null
+    input_params:
+    - A_planck
+    output_params: []
+  planck_NPIPE_highl_CamSpec.TTTEEE:
+    path: null
+    dataset_file: CamSpec_NPIPE/CamSpec_NPIPE_12_6_cl.dataset
+    dataset_params:
+      use_cl: 143x143 217x217 143x217 TE EE
+    aliases:
+    - CamSpec_NPIPE_TTTEEE
+    speed: 10
+    type: CMB
+    stop_at_error: false
+    version: null
+    input_params:
+    - A_planck
+    - use_fg_residual_model
+    - cal0
+    - cal2
+    - amp_100
+    - amp_143
+    - amp_217
+    - amp_143x217
+    - n_100
+    - n_143
+    - n_217
+    - n_143x217
+    - calTE
+    - calEE
+    output_params: []
+  planck_2018_lensing.native:
+    path: null
+    dataset_file: lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8.dataset
+    dataset_params: null
+    l_max: null
+    aliases:
+    - lensing
+    speed: 50
+    type: CMB
+    map_separator: x
+    stop_at_error: false
+    version: null
+    input_params:
+    - A_planck
+    output_params: []
+  sn.desdovekie:
+    path: null
+    dataset_file: DES-Dovekie/config.dataset
+    dataset_params: null
+    aliases:
+    - DESDovekie
+    use_abs_mag: false
+    speed: 100
+    type: SN
+    stop_at_error: false
+    version: null
+    input_params: []
+    output_params: []
+  bao.desi_dr2:
+    path: null
+    measurements_file: bao_data/desi_bao_dr2/desi_gaussian_bao_ALL_GCcomb_mean.txt
+    cov_file: bao_data/desi_bao_dr2/desi_gaussian_bao_ALL_GCcomb_cov.txt
+    rs_fid: 1
+    aliases:
+    - BAO
+    speed: 2000
+    type: BAO
+    rs_rescale: null
+    prob_dist: null
+    invcov_file: null
+    redshift: null
+    observable_1: null
+    observable_2: null
+    observable_3: null
+    grid_file: null
+    stop_at_error: false
+    version: null
+    input_params: []
+    output_params: []
+params:
+  logA:
+    prior:
+      min: 2.98
+      max: 3.1
+    ref:
+      dist: norm
+      loc: 3.040776555
+      scale: 0.001
+    proposal: 0.001
+    latex: \log(10^{10} A_\mathrm{s})
+    drop: true
+  A_s:
+    value: 'lambda logA: 1e-10*np.exp(logA)'
+    latex: A_\mathrm{s}
+    derived: true
+    renames:
+    - As
+  n_s:
+    prior:
+      min: 0.94
+      max: 0.99
+    ref:
+      dist: norm
+      loc: 0.9652909209
+      scale: 0.002
+    proposal: 0.002
+    latex: n_\mathrm{s}
+    renames:
+    - ns
+  tau_reio:
+    prior:
+      min: 0.03
+      max: 0.08
+    ref:
+      dist: norm
+      loc: 0.05546101493
+      scale: 0.003
+    proposal: 0.003
+    latex: \tau_\mathrm{reio}
+    renames:
+    - tau
+  H0:
+    prior:
+      min: 64.0
+      max: 72.0
+    ref:
+      dist: norm
+      loc: 67.7123491
+      scale: 0.05
+    proposal: 0.05
+    latex: H_{0}
+  h:
+    derived: 'lambda H0: H0/100.'
+  omega_b:
+    prior:
+      min: 0.021
+      max: 0.023
+    ref:
+      dist: norm
+      loc: 0.0224954976
+      scale: 0.0001
+    proposal: 0.0001
+    latex: \Omega_\mathrm{b} h^2
+    renames:
+    - omegabh2
+  omega_cdm:
+    prior:
+      min: 0.11
+      max: 0.13
+    ref:
+      dist: norm
+      loc: 0.1186384753
+      scale: 0.0005
+    proposal: 0.0005
+    latex: \Omega_\mathrm{cdm} h^2
+    renames:
+    - omegach2
+  Omega_Lambda:
+    derived: true
+    latex: \Omega_\Lambda
+    renames:
+    - omegal
+  Omega_m:
+    derived: true
+    latex: \Omega_\mathrm{m}
+    renames:
+    - omegam
+  omega_m:
+    derived: 'lambda Omega_m, h: Omega_m*h**2'
+    latex: \Omega_\mathrm{m} h^2
+  A_planck:
+    prior:
+      dist: norm
+      loc: 1
+      scale: 0.0025
+    ref:
+      dist: norm
+      loc: 1
+      scale: 0.002
+    proposal: 0.0005
+    latex: y_\mathrm{cal}
+    renames: calPlanck
+  use_fg_residual_model:
+    value: 0
+  cal0:
+    value: 1
+  cal2:
+    value: 1
+  amp_100:
+    value: 0
+  amp_143:
+    prior:
+      dist: uniform
+      min: 0
+      max: 50
+    ref:
+      dist: norm
+      loc: 10
+      scale: 1
+    latex: A^{\rm power}_{143}
+    proposal: 1
+  amp_217:
+    prior:
+      dist: uniform
+      min: 0
+      max: 50
+    ref:
+      dist: norm
+      loc: 20
+      scale: 1
+    latex: A^{\rm power}_{217}
+    proposal: 1
+  amp_143x217:
+    prior:
+      dist: uniform
+      min: 0
+      max: 50
+    ref:
+      dist: norm
+      loc: 10
+      scale: 1
+    latex: A^{\rm power}_{143\times217}
+    proposal: 1
+  n_100:
+    value: 1
+  n_143:
+    prior:
+      dist: uniform
+      min: 0
+      max: 5
+    ref:
+      dist: norm
+      loc: 1
+      scale: 0.2
+    latex: \gamma^{\rm power}_{143}
+    proposal: 0.2
+  n_217:
+    prior:
+      dist: uniform
+      min: 0
+      max: 5
+    ref:
+      dist: norm
+      loc: 1
+      scale: 0.2
+    latex: \gamma^{\rm power}_{217}
+    proposal: 0.2
+  n_143x217:
+    prior:
+      dist: uniform
+      min: 0
+      max: 5
+    ref:
+      dist: norm
+      loc: 1
+      scale: 0.2
+    latex: \gamma^{\rm power}_{143\times217}
+    proposal: 0.2
+  calTE:
+    prior:
+      dist: norm
+      loc: 1
+      scale: 0.01
+    ref:
+      dist: norm
+      loc: 1
+      scale: 0.01
+    proposal: 0.01
+    latex: c_{TE}
+  calEE:
+    prior:
+      dist: norm
+      loc: 1
+      scale: 0.01
+    ref:
+      dist: norm
+      loc: 1
+      scale: 0.01
+    proposal: 0.01
+    latex: c_{EE}
+  chi2__BAO:
+    latex: \chi^2_\mathrm{BAO}
+    derived: true
+  chi2__CMB:
+    latex: \chi^2_\mathrm{CMB}
+    derived: true
+  chi2__SN:
+    latex: \chi^2_\mathrm{SN}
+    derived: true
+sampler:
+  mcmc:
+    sampler_type: mcmc
+    supports_periodic_params: true
+    burn_in: 0
+    max_tries: 40d
+    covmat: null
+    covmat_params: null
+    proposal_scale: 2.4
+    output_every: 60s
+    learn_every: 40d
+    temperature: 1
+    learn_proposal: true
+    learn_proposal_Rminus1_max: 2.0
+    learn_proposal_Rminus1_max_early: 30.0
+    learn_proposal_Rminus1_min: 0.0
+    max_samples: 1000
+    Rminus1_stop: 0.01
+    Rminus1_cl_stop: 0.2
+    Rminus1_cl_level: 0.95
+    Rminus1_single_split: 4
+    measure_speeds: true
+    oversample_power: 0.4
+    oversample_thin: true
+    drag: false
+    blocking:
+    - - 1
+      - - logA
+        - n_s
+        - tau_reio
+        - H0
+        - omega_b
+        - omega_cdm
+    - - 6
+      - - A_planck
+    - - 7
+      - - amp_143
+        - amp_217
+        - amp_143x217
+        - n_143
+        - n_217
+        - n_143x217
+        - calTE
+        - calEE
+    callback_function: null
+    callback_every: null
+    seed: null
+    check_every: null
+    oversample: null
+    drag_limits: null
+    fallback_covmat_scale: 4
+    version: 3.6.2
+output: lcdm_full
+timing: true
+version: 3.6.2

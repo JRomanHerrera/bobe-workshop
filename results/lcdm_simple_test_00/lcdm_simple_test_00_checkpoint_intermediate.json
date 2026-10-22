@@ -1,0 +1,232 @@
+{
+  "convergence_history": [
+    {
+      "iteration": 9,
+      "logz_dict": {
+        "mean": -1.6220989293253703,
+        "dlogz_sampler": 0.04116478437586097,
+        "upper": -1.6218635074599077,
+        "lower": -1.6223343511448864,
+        "var": 3.0045481314458685e-11,
+        "std": 1.0962751719246164e-05
+      },
+      "converged": true,
+      "delta": 1.0962751719246164e-05,
+      "threshold": 1.0,
+      "dlogz_sampler": 0.04116478437586097
+    }
+  ],
+  "logz_evolution": [
+    {
+      "iteration": 9,
+      "logz": -1.6220989293253703,
+      "logz_upper": -1.6218635074599077,
+      "logz_lower": -1.6223343511448864,
+      "logz_err": 1.0962751719246164e-05,
+      "logz_var": 3.0045481314458685e-11,
+      "logz_std": 1.0962751719246164e-05,
+      "dlogz_sampler": 0.04116478437586097
+    }
+  ],
+  "acquisition_data": {
+    "iterations": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "values": [
+      0.0002968703482467249,
+      0.0002827612647792363,
+      0.0002779297242240081,
+      0.00027606914406904466,
+      0.00026642370735717875,
+      0.00025708765661887876,
+      0.0002501442134683233,
+      0.00024252957725479578,
+      0.00023783369615076782
+    ],
+    "functions": [
+      "WIPStd",
+      "WIPStd",
+      "WIPStd",
+      "WIPStd",
+      "WIPStd",
+      "WIPStd",
+      "WIPStd",
+      "WIPStd",
+      "WIPStd"
+    ]
+  },
+  "gp_hyperparams": {
+    "iterations": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "lengthscales": [
+      [
+        4.0,
+        2.8586008411413886
+      ],
+      [
+        4.0,
+        2.8709577931117467
+      ],
+      [
+        4.0,
+        2.924943920962525
+      ],
+      [
+        4.0,
+        2.9343830154793435
+      ],
+      [
+        4.0,
+        2.959506805644928
+      ],
+      [
+        4.0,
+        2.9767993795214567
+      ],
+      [
+        4.0,
+        2.989588314488951
+      ],
+      [
+        4.0,
+        2.9913824982942128
+      ],
+      [
+        4.0,
+        2.9913824982942128
+      ]
+    ],
+    "kernel_variances": [
+      6297.699623984419,
+      6677.893422767853,
+      6722.056144686075,
+      7024.708908253605,
+      7692.042359152843,
+      8119.500508471946,
+      8692.492201188044,
+      8929.7186930357,
+      8929.7186930357
+    ]
+  },
+  "best_loglike_data": {
+    "iterations": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "best_loglike": [
+      -0.07094863409661745,
+      -0.07094863409661745,
+      -0.07094863409661745,
+      -0.07094863409661745,
+      -0.07094863409661745,
+      -0.07094863409661745,
+      -0.07094863409661745,
+      -0.07094863409661745,
+      -0.07094863409661745
+    ]
+  },
+  "kl_data": {
+    "iterations": [],
+    "kl_divergences": [],
+    "successive_kl": []
+  },
+  "timing": {
+    "phase_times": {
+      "GP Training": 3.5541863441467285,
+      "Acquisition Optimization": 33.04592227935791,
+      "True Objective Evaluations": 3.213467597961426,
+      "Nested Sampling": 1.2709250450134277,
+      "MCMC Sampling": 6.638830661773682,
+      "Classifier Training": 0.08980298042297363
+    },
+    "percentages": {
+      "GP Training": 7.204384508232649,
+      "Acquisition Optimization": 66.9845380847138,
+      "True Objective Evaluations": 6.513742932637053,
+      "Nested Sampling": 2.576182512348773,
+      "MCMC Sampling": 13.457000883262548,
+      "Classifier Training": 0.1820318740512503
+    },
+    "total_runtime": 49.333657026290894,
+    "current_session_runtime": 49.333657026290894,
+    "previous_runtime": 0.0
+  },
+  "gp_info": {},
+  "start_time": 1792641924.568703,
+  "param_names": [
+    "omega_b",
+    "H0"
+  ],
+  "param_labels": [
+    "\\Omega_\\mathrm{b} h^2",
+    "H_0"
+  ],
+  "param_bounds": [
+    [
+      0.021,
+      64.0
+    ],
+    [
+      0.023,
+      72.0
+    ]
+  ],
+  "settings": {
+    "n_cobaya_init": 1,
+    "n_sobol_init": 32,
+    "use_clf": true,
+    "clf_type": "svm",
+    "clf_nsigma_threshold": 20,
+    "minus_inf": -10000000000.0,
+    "seed": 42,
+    "dynamic_dispatch": false,
+    "acq": "wipstd",
+    "min_evals": 70,
+    "max_evals": 500,
+    "max_gp_size": 500,
+    "logz_threshold": 1.0,
+    "convergence_n_iters": 2,
+    "ei_goal": 1e-10,
+    "do_final_ns": true,
+    "fit_n_points": 10,
+    "batch_size": 5,
+    "ns_n_points": 10,
+    "num_hmc_warmup": 512,
+    "num_hmc_samples": 4096,
+    "mc_points_size": 512,
+    "thinning": 4,
+    "num_chains": 4,
+    "mc_points_method": "NUTS",
+    "zeta_ei": 0.0
+  },
+  "run_info": {
+    "start_time": "2026-10-21T22:05:24.568703",
+    "likelihood_name": "lcdm_simple_test_00",
+    "output_file": "lcdm_simple_test_00",
+    "save_dir": "/Users/johnatanroman/bobe_workshop/results/lcdm_simple_test_00/"
+  }
+}

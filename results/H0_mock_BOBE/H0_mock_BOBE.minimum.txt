@@ -1,0 +1,2 @@
+#        weight    minuslogpost             H0
+              1      0.0029106  7.01525938e+01

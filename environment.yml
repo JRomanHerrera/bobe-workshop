@@ -1,0 +1,16 @@
+name: bobe_ws
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+  - jupyterlab
+  - ipykernel
+  - pip:
+      - cobaya

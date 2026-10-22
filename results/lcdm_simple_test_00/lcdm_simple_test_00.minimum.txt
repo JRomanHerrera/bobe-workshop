@@ -1,0 +1,2 @@
+#        weight    minuslogpost        omega_b             H0
+              1      0.0709486  2.23868064e-02  6.76773599e+01

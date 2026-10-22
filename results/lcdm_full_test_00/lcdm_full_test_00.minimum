@@ -1,0 +1,18 @@
+ -log(Like) = 6308.049605975508
+  chi-sq    = 12616.099211951016
+
+    1  3.056959367e+00   logA                                      \log(10^{10} A_\mathrm{s})
+    2  9.636416508e-01   n_s                                       n_\mathrm{s}
+    3  6.142691456e-02   tau_reio                                  \tau_\mathrm{reio}
+    4  6.822285205e+01   H0                                        H_{0}
+    5  2.216823131e-02   omega_b                                   \Omega_\mathrm{b} h^2
+    6  1.185126492e-01   omega_cdm                                 \Omega_\mathrm{cdm} h^2
+    7  1.002724282e+00   A_planck                                  y_\mathrm{cal}
+    8  1.887928993e+01   amp_143                                   A^{\rm power}_{143}
+    9  1.194062738e+01   amp_217                                   A^{\rm power}_{217}
+   10  9.297772864e+00   amp_143x217                               A^{\rm power}_{143\times217}
+   11  1.039179135e+00   n_143                                     \gamma^{\rm power}_{143}
+   12  1.611680009e+00   n_217                                     \gamma^{\rm power}_{217}
+   13  1.717956824e+00   n_143x217                                 \gamma^{\rm power}_{143\times217}
+   14  9.984780186e-01   calTE                                     c_{TE}
+   15  1.000238225e+00   calEE                                     c_{EE}

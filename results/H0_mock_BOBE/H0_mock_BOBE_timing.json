@@ -1,0 +1,19 @@
+{
+  "phase_times": {
+    "GP Training": 0.8240888118743896,
+    "Acquisition Optimization": 2.6510162353515625,
+    "True Objective Evaluations": 0.020864248275756836,
+    "Nested Sampling": 4.434170484542847,
+    "MCMC Sampling": 1.4477882385253906
+  },
+  "percentages": {
+    "GP Training": 0.08088961350280528,
+    "Acquisition Optimization": 0.26021428221978504,
+    "True Objective Evaluations": 0.00204796006781583,
+    "Nested Sampling": 0.43524233253986777,
+    "MCMC Sampling": 0.1421097208950782
+  },
+  "total_runtime": 1018.7819871902466,
+  "current_session_runtime": 1018.7819871902466,
+  "previous_runtime": 0.0
+}
